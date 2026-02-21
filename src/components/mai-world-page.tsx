@@ -10,9 +10,9 @@ import {
   MapPin,
   Phone,
 } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, type Variants } from "framer-motion";
 
-const headingContainerVariants = {
+const headingContainerVariants: Variants = {
   hidden: {},
   show: {
     transition: {
@@ -22,7 +22,7 @@ const headingContainerVariants = {
   },
 };
 
-const headingLineVariants = {
+const headingLineVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 14,
@@ -34,7 +34,7 @@ const headingLineVariants = {
     filter: "blur(0px)",
     transition: {
       duration: 0.55,
-      ease: "easeOut",
+      ease: [0.16, 1, 0.3, 1], // safe easing curve, no TS drama
     },
   },
 };
